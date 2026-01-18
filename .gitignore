@@ -2,3 +2,7 @@ image_set
 test.py
 query_image.jpg
 target_image.jpg
+__pycache__
+imagenette2-320.tgz
+imagenette
+rush
