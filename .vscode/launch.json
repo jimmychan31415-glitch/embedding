@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run CAM Script",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/scripts/run_cam.py",
+            "args": [
+                "--image_path",
+                "data/images/dog.jpg",
+                "--text_prompt",
+                "a photo of a dog",
+                "--method",
+                "gradcam++"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": true
+        }
+    ]
+}
