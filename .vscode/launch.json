@@ -2,20 +2,26 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Run CAM Script",
+            "name": "Run CLIP GradCAM Example",
             "type": "python",
             "request": "launch",
-            "program": "${workspaceFolder}/scripts/run_cam.py",
-            "args": [
-                "--image_path",
-                "data/images/dog.jpg",
-                "--text_prompt",
-                "a photo of a dog",
-                "--method",
-                "gradcam++"
-            ],
+            "program": "${workspaceFolder}/examples/clip_gradcam_example.py",
             "console": "integratedTerminal",
-            "justMyCode": true
+            "args": [
+                "--image-path",
+                "examples/both.png",
+                "--labels",
+                "a cat",
+                "a dog",
+                "a car",
+                "--method",
+                "gradcam",
+                "--device",
+                "cuda",
+                "--output",
+                "out_gradcam.jpg"
+            ],
+            "env": {}
         }
     ]
 }

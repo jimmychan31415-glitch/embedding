@@ -11,8 +11,8 @@ from pytorch_grad_cam.utils.model_targets import ClassifierOutputTarget
 # 设备设置
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
-# 加载 CLIP 模型（ViT-L/14）
-model, preprocess = clip.load("ViT-L/14", device=device)
+# 加载 CLIP 模型（ViT-B/32）
+model, preprocess = clip.load("ViT-B/32", device=device)
 model = model.float()  # 确保 fp32
 
 # 包装 CLIP（使用原始相似度，无 softmax）
@@ -30,8 +30,8 @@ class CLIPWrapper(torch.nn.Module):
 
 # 多文本提示（增加区分性，热图会聚焦 dog）
 prompts = [ "a photo of a cat", "a photo of a dog"]
-category = "dog"
-target_index = 1  # 针对 dog
+category = "cat"
+target_index = 0  # 针对 cat
 
 text = clip.tokenize(prompts).to(device)
 with torch.no_grad():
